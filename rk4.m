@@ -24,15 +24,19 @@ u_all = U_temp;
 
 %---------------------display------------------------------------
 % figure(1);
-% plot(Y(1,:),'r')
+% title('1')
+% plot(czas,Y(1,:),'r')
 % hold on;
-% plot(theta1,'b')
-% plot(U_temp(1,:),'g')
+% plot(czas,U_temp(1,:),'g')
+% legend('x1','u1')
 % figure(2);
-% plot(Y(2,:),'b')
-% hold on;
-% plot(U_temp(2,:),'g')
+% title('2')
 % 
+% plot(czas,Y(2,:),'b')
+% hold on;
+% plot(czas,U_temp(2,:),'g')
+% legend('x2','u2')
+
 % -------------------proste zadanie kinematyki------------------------
 % a1 = 1;
 % a2 = 0.7;
