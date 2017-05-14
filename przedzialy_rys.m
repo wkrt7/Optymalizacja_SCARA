@@ -19,23 +19,23 @@ function [ x_last ] = przedzialy( Tau )
 		h = delta/n;
         [x,x_all,czas,u_all] = rk4(x,u(i,:),n,h);  
         
-%         figure(1)
-%         title('x_1')
-%         plot(czas/MSH,x_all(1,:))
-%         hold on
-%         plot(czas/MSH,x_all(3,:),'g')
-%         hold on
-%         plot(czas/MSH,u_all(1,:),'r')
-%         hold on
-%         legend('x1','x3','u1')
-%         figure(2)
-%         title('x_2')
-%         plot(czas/MSH,x_all(2,:))
-%         hold on
-%         plot(czas/MSH,x_all(4,:),'g')
-%         hold on
-%         plot(czas/MSH,u_all(2,:),'r')
-%         legend('x2','x4','u2')
+        figure(1)
+        title('x_1')
+        plot(czas/MSH,x_all(1,:))
+        hold on
+        plot(czas/MSH,x_all(3,:),'g')
+        hold on
+        plot(czas/MSH,u_all(1,:),'r')
+        hold on
+        legend('x1','x3','u1')
+        figure(2)
+        title('x_2')
+        plot(czas/MSH,x_all(2,:))
+        hold on
+        plot(czas/MSH,x_all(4,:),'g')
+        hold on
+        plot(czas/MSH,u_all(2,:),'r')
+        legend('x2','x4','u2')
         
 %----------------------display proste zadanie kinematyki-------
 %         figure(3)
