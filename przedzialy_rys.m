@@ -1,15 +1,13 @@
 function [ x_last ] = przedzialy( Tau )
 %PRZEDZIALY Summary of this function goes here
 %   Detailed explanation goes here
-    u=[-1 1;
+    u=[-1  1;
        -1 -1;
-        1 -1 ;
-        1 1 ;
-        0 0;
-        0 0];
-%     u=[1 0;1  0; 1 0;1 0 ; 0 0 ];
-%     u=[0 1;  0 1;0 1 ;0 1 ; 0 1 ];
-    x =[1.5 -.5 0 0];
+        1 -1;
+        1  1;
+        0  0;
+        0  0];
+    x =[1.5 1.5 0 0];
     MSH = 100;
 	global tmp
 	tmp=1;
