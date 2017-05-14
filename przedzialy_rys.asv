@@ -21,12 +21,9 @@ function [ x_last ] = przedzialy( Tau )
 		n = ceil(MSH * delta);
 		h = delta/n;
         [x,x_all_t,czas_t,u_all_t] = rk4(x,u(i,:),n,h);  
-        x_all = cat(2,x_all,x_all_t);
-        u_all = cat(2,u_all,u_all_t);
-        czas = cat(2,czas,czas_t);
-        
-    end;
-    figure(1)
+        x_all = cat(2,x_all,x_all_t)
+        u_all = cat()
+        figure(1)
         title('x_1')
         plot(czas/MSH,x_all(1,:))
         hold on
@@ -34,16 +31,13 @@ function [ x_last ] = przedzialy( Tau )
         hold on
         plot(czas/MSH,u_all(1,:),'r')
         hold on
-        grid on
         legend('x1','x3','u1')
         figure(2)
-        
         title('x_2')
         plot(czas/MSH,x_all(2,:))
         hold on
         plot(czas/MSH,x_all(4,:),'g')
         hold on
-        grid on
         plot(czas/MSH,u_all(2,:),'r')
         legend('x2','x4','u2')
         
@@ -56,8 +50,7 @@ function [ x_last ] = przedzialy( Tau )
         y_1 = a1 * sin(x_all(1,:)) + a2 * sin(x_all(1,:)+ x_all(2,:));
         plot(x_1,y_1)
         hold on
-        grid on
         axis([-2 2 -2 2])
-    
+    end;
     x_last = x;
 end
