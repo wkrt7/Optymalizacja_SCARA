@@ -77,10 +77,8 @@ function [ x_last ] = przedzialy_rys( Tau )
         plot(x_1,y_1)
         hold on
         grid on
-        plot(x_1(end),y_1(end),'r*')
-        plot(x_1(1),y_1(1),'g*')
-        legend('trajketoria systemu','punkt koñcowy','punkt pocz¹tkowy')
-
+        plot(x_1(end),y_1(end),'*')
+        
         axis([-2 2 -2 2])
         xlabel('x1')
         ylabel('x2')
