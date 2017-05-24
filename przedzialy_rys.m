@@ -9,8 +9,6 @@ function [ x_last ] = przedzialy_rys( Tau )
         0  0];
     x =[1.5 -.5 0 0];
     MSH = 100;
-	global tmp
-	tmp=1;
     x_all = [];
     czas = [];
     u_all = [];
@@ -18,7 +16,7 @@ function [ x_last ] = przedzialy_rys( Tau )
 		delta = Tau(i+1) - Tau(i);
 		n = ceil(MSH * delta);
 		h = delta/n;
-        [x,x_all_t,czas_t,u_all_t] = rk4(x,u(i,:),n,h);  
+        [x,x_all_t,czas_t,u_all_t] = rk4(x,u(i,:),n,h,Tau(i));  
         x_all = cat(2,x_all,x_all_t);
         u_all = cat(2,u_all,u_all_t);
         czas = cat(2,czas,czas_t);
@@ -28,19 +26,19 @@ function [ x_last ] = przedzialy_rys( Tau )
     title('x_1')
 
     subplot(3,1,1)
-    plot(czas/MSH,x_all(1,:))
+    plot(czas,x_all(1,:))
     grid on
     xlabel('czas [s]')
     ylabel(' po³o¿enie cz³onu 1')
 
     subplot(3,1,2)
-    plot(czas/MSH,x_all(3,:),'g')
+    plot(czas,x_all(3,:),'g')
     grid on
     xlabel('czas [s]')
     ylabel(' prêdkoœæ cz³onu 1')
 
     subplot(3,1,3)
-    plot(czas/MSH,u_all(1,:),'r')
+    plot(czas,u_all(1,:),'r')
     xlabel('czas [s]')
     ylabel(' sterowanie cz³onu 1')
     grid on
@@ -48,19 +46,19 @@ function [ x_last ] = przedzialy_rys( Tau )
 
     figure(2)
     subplot(3,1,1)
-    plot(czas/MSH,x_all(2,:))
+    plot(czas,x_all(2,:))
     grid on
     xlabel('czas [s]')
     ylabel(' po³o¿enie cz³onu 2')
 
     subplot(3,1,2)
-    plot(czas/MSH,x_all(4,:),'g')
+    plot(czas,x_all(4,:),'g')
     grid on
     xlabel('czas [s]')
     ylabel(' prêdkoœæ cz³onu 2')
 
     subplot(3,1,3)
-    plot(czas/MSH,u_all(2,:),'r')
+    plot(czas,u_all(2,:),'r')
     xlabel('czas [s]')
     ylabel(' sterowanie cz³onu 2')
     grid on

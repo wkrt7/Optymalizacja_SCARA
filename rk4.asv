@@ -4,7 +4,7 @@ function [ x_last,x_all,czas,u_all ] = rk4( x_first,u,n,h,t0 )
 %   Detailed explanation goes here
 yj = x_first;
 Y = zeros(length(yj),n);
-U_temp = zeros(length(u),n);
+U_temp = zeros(2,n);
 
     for j = 1 : n
       k1 = rhs(yj,u);
@@ -16,7 +16,7 @@ U_temp = zeros(length(u),n);
 	  Y(:,j) = yj;
       U_temp(:,j) = u;
     end
-czas = linspace(t0,t0+n*h,n);
+czas = linspace(t0,t0+n*h,n)
 x_last = Y(:,end)';
 x_all = Y;
 u_all = U_temp;
