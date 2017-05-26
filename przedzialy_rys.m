@@ -23,7 +23,7 @@ function [ x_last ] = przedzialy_rys( Tau )
         
     end;
     figure(1)
-    title('x_1')
+    title('cz³on 1')
 
     subplot(3,1,1)
     plot(czas,x_all(1,:))
@@ -45,6 +45,8 @@ function [ x_last ] = przedzialy_rys( Tau )
 
 
     figure(2)
+    title('cz³on 2')
+
     subplot(3,1,1)
     plot(czas,x_all(2,:))
     grid on
@@ -77,8 +79,7 @@ function [ x_last ] = przedzialy_rys( Tau )
         grid on
         plot(x_1(end),y_1(end),'r*')
         plot(x_1(1),y_1(1),'g*')
-        legend('trajketoria systemu','punkt koñcowy','punkt pocz¹tkowy')
-
+        legend('trajeltoria systemu','punkt koñcowy','punkt pocz¹tkowy')
         axis([-2 2 -2 2])
         xlabel('x1')
         ylabel('x2')

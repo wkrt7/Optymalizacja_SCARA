@@ -9,8 +9,8 @@ b = [0;0;0;0;0;0];
 Aeq = [1 0 0 0 0 0];
 beq = [0];
 options=optimset('display','iter','MaxFunEvals',10000);
-[Y,fval] = fmincon(@f_celu, Tau1,A,b,Aeq,beq,[],[],[],options);
-Y
+% [Y,fval] = fmincon(@f_celu, Tau1,A,b,Aeq,beq,[],[],[],options);
+% Y
 
 przedzialy_rys(Y);
 
