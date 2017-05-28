@@ -7,7 +7,8 @@ function [ x_last ] = przedzialy_rys( Tau )
         1  1;
         0  0;
         0  0];
-    x =[1.5 -.5 0 0];
+     x =[1.5 -.5 0 0];
+     Tau = [0 Tau];
     MSH = 100;
     x_all = [];
     czas = [];

@@ -17,6 +17,7 @@ U_temp = zeros(length(u),n);
       U_temp(:,j) = u;
     end
 czas = linspace(t0,t0+n*h,n);
+
 x_last = Y(:,end)';
 x_all = Y;
 u_all = U_temp;
